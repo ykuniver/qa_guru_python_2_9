@@ -6,6 +6,8 @@ from tests.test_data.users import student
 import allure
 from allure_commons.types import Severity
 
+from demoqa_tests.utils import attachments
+
 
 def test_submit_student_registration_form():
 
@@ -54,6 +56,11 @@ def test_submit_student_registration_form():
     with allure.step("Then: verifying the result"):
         subjects = app.registration_form.get_subject_list(student.subjects)
         hobbies = app.registration_form.get_hobby_list(student.hobbies)
+
+        attachments.add_screenshot()
+        attachments.add_logs()
+        attachments.add_html()
+        attachments.add_video()
 
         registration_form.should_have_submitted(
             [
