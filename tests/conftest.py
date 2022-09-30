@@ -16,6 +16,9 @@ def browser_management():
     )
     browser.config.timeout = float(os.getenv('selene.timeout', '15'))
 
+    browser.config.window_width = 1500
+    browser.config.window_height = 900
+
     options = Options()
     selenoid_capabilities = {
         "browserName": "chrome",
