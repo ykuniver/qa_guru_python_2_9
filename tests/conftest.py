@@ -14,7 +14,7 @@ def browser_management():
     browser.config.hold_browser_open = (
         os.getenv('selene.hold_browser_open', 'false').lower() == 'true'
     )
-    browser.config.timeout = float(os.getenv('selene.timeout', '3'))
+    browser.config.timeout = float(os.getenv('selene.timeout', '9'))
 
     options = Options()
     selenoid_capabilities = {
